@@ -1,0 +1,74 @@
+apikey=O51XP3MY1UKH79TT
+
+##############################################################################################
+
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=AAPL&apikey=O51XP3MY1UKH79TT
+
+composer create-project laravel/laravel="6.*" test --prefer-dist
+
+##############################################################################################
+
+DBnmae: BetOnStockMarket
+
+// comando para criar uma tabela
+create_user_table --> vai ser a classe que representa a criação da tabela
+--create= xxxx --> xxxx -> vai ser o nome da tabela
+
+php artisan make:migration create_user_table --create=users
+php artisan make:migration CreatePasswordResetsTable --create=password_resets
+php artisan make:migration CreateFailedJobsTable --create=failed_jobs
+
+php artisan make:migration Create_stock_table --create=stocks
+
+php artisan migrate
+
+//comando usado para criar as tabelas no DB BetOnStockMarket
+//NOTA: convém criar a DB antes e alterar os dois ficheiros primeiro: database no config; e env;
+
+php artisan migrate
+php artisan migrate:reset
+################################################################################################
+
+
+C:\wamp64\www\Lavarel_test>composer create-project laravel/laravel="6.*" BetStockMarket --prefer-dist
+C:\wamp64\www\Lavarel_test>composer require laravel/ui
+C:\wamp64\www\Lavarel_test>cd test
+C:\wamp64\www\Lavarel_test\test>composer require laravel/ui ^"1.2"
+C:\wamp64\www\Lavarel_test\test>php artisan ui:auth
+C:\wamp64\www\Lavarel_test\test>php artisan ui bootstrap --auth
+C:\wamp64\www\Lavarel_test\test>php artisan migrate
+C:\wamp64\www\Lavarel_test\test>npm install
+C:\wamp64\www\Lavarel_test\test>npm run dev
+C:\wamp64\www\Lavarel_test\test>php artisan serve
+
+
+####################################################################################################################
+
+
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=AAPL&apikey=O51XP3MY1UKH79TT
+
+composer create-project laravel/laravel="6.*" test --prefer-dist
+
+
+
+DBnmae: BetStockMarket
+
+// comando para criar uma tabela
+create_user_table --> vai ser a classe que representa a criação da tabela
+--create= xxxx --> xxxx -> vai ser o nome da tabela
+
+php artisan make:migration create_user_table --create=users
+php artisan make:migration CreatePasswordResetsTable --create=password_resets
+php artisan make:migration CreateFailedJobsTable --create=failed_jobs
+
+php artisan make:migration Create_stock_table --create=stocks
+
+php artisan migrate
+
+//comando usado para criar as tabelas no DB BetOnStockMarket
+//NOTA: convém criar a DB antes e alterar os dois ficheiros primeiro: database no config; e env;
+
+php artisan migrate
+php artisan migrate:reset
+################################################################################################
+
