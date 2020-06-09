@@ -71,7 +71,7 @@
                 </div>
             </div>
         </nav>
-
+        <h1>@yield('cena')</h1>
         <main class="py-4">
             @yield('content')
         </main>
