@@ -57,6 +57,10 @@ class BetController extends Controller
         $bet->user_id = $user->id;
 
         $bet->save();
+        
+        $newPoints = $user->points - (int)$request->get('amount');
+        $user->points = $newPoints;
+        $user->save();
 
         return redirect()->route('bets.index')
                         ->with('success','Bet created successfully.');
