@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Bet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BetController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,10 @@ class BetController extends Controller
      */
     public function index()
     {
-        //
+        $stocks = DB::table('stocks')->get();
+        return view('bets.index', [
+            'stocks' => $stocks
+        ]);
     }
 
     /**
@@ -24,7 +32,7 @@ class BetController extends Controller
      */
     public function create()
     {
-        //
+        return view('bets.create');
     }
 
     /**
@@ -35,7 +43,23 @@ class BetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'amount' => 'required',
+            'symbol' => 'required', // minimo = 1 e máximo = max_user_points
+        ]);
+        // (int)$request->get('amount');
+        // auth()->user()->bets()->create($data);
+        
+        $bet = new Bet;
+        $user = auth()->user();
+        $bet->amount = (int)$request->get('amount');
+        $bet->symbol = $request->input('symbol');
+        $bet->user_id = $user->id;
+
+        $bet->save();
+
+        return redirect()->route('bets.index')
+                        ->with('success','Bet created successfully.');
     }
 
     /**
