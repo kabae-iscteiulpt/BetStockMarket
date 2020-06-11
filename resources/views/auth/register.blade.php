@@ -66,6 +66,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                               <input type="checkbox" name="userAdmin"> userAdmin
                             </div>
                         </div>
                     </form>

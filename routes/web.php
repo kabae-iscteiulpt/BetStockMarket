@@ -12,11 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Main');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/backoffice','BackOfficeController@index' )->name('backoffice');
+Route::get('/backoffice','BackOfficeController@index')->name('backoffice');
+
+Route::get('/profile','UserController@index')->name('profile');
+
+// vou deixar este codigo em baixo só para teste -- KA
+Route::get('/app', function(){
+    return view('layouts.app');
+});

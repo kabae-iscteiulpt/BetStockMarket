@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BackOfficeController extends Controller
 {
@@ -20,8 +21,29 @@ class BackOfficeController extends Controller
 
    public function index(Request $request)
    {
-        return view('backoffice');
+    $stocks = DB::select('select * from stocks');
     
+    return view('backoffice', ['listOfStock' => $stocks]);
+
+        //return view('backoffice');
+    
+    }
+
+    public function showListOfStock(){
+        $stocks = DB::select('select * from stock');
+    
+        return view('backoffice', ['listOfStock' => $stocks]);
+    }
+
+
+    public function insertButton(){
+
+        
+
+    }
+
+    public function updateButton(){
+
     }
 
 }
