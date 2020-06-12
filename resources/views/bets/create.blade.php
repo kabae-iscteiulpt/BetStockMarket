@@ -25,17 +25,16 @@
                 </div>
                 <br>
                 <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="betRadio" id="gridRadios1" value="up">
-                        <label class="form-check-label" for="gridRadios1">
-                          Up
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="betRadio" id="gridRadios2" value="down">
-                        <label class="form-check-label" for="gridRadios2">
-                          Down
-                    </label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="options">
+                          <option selected>Choose...</option>
+                          <option value="up">Up</option>
+                          <option value="down">Down</option>
+                          <option value="linear">Linear</option>
+                        </select>
                     </div>
                 </div>
             </div>

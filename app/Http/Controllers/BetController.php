@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class BetController extends Controller
 {
@@ -46,14 +47,15 @@ class BetController extends Controller
         $data = request()->validate([
             'amount' => 'required',
             'symbol' => 'required', // minimo = 1 e máximo = max_user_points
+            'options' => 'required',
         ]);
         // (int)$request->get('amount');
         // auth()->user()->bets()->create($data);
-        
         $bet = new Bet;
         $user = auth()->user();
         $bet->amount = (int)$request->get('amount');
         $bet->symbol = $request->input('symbol');
+        $bet->bet_option = $request->input('options');
         $bet->user_id = $user->id;
 
         $bet->save();

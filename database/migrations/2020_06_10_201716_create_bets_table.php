@@ -17,6 +17,7 @@ class CreateBetsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('amount');
             $table->string('symbol');
+            $table->string('bet_option');
             $table->integer('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
