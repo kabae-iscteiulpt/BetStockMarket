@@ -23,7 +23,10 @@ Route::get('/backoffice','BackOfficeController@index')->name('backoffice');
 
 Route::get('/profile','UserController@index')->name('profile');
 
-// vou deixar este codigo em baixo só para teste -- KA
-Route::get('/app', function(){
-    return view('layouts.app');
+Route::post('/insertStock','BackOfficeController@insertStock');
+
+Route::get('/deleteStock/{id}',function($id){
+    DB::table('stocks')->where('id', '=', $id)->delete();
+    return redirect()->route('backoffice');
 });
+
