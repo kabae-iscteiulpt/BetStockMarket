@@ -40,6 +40,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/profile') }}">{{ __('Profile') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/rank') }}">{{ __('Ranks') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
