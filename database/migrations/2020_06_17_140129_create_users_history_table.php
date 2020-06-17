@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBetsTable extends Migration
+class CreateUsersHistoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateBetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bets', function (Blueprint $table) {
+        Schema::create('users_history', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('amount');
-            $table->string('symbol');
-            $table->string('bet_option');
+            $table->integer('points');
             $table->bigInteger('user_id');
-            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
-
+            $table->timestamps();
         });
     }
 
@@ -32,6 +29,6 @@ class CreateBetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bets');
+        Schema::dropIfExists('users_history');
     }
 }
