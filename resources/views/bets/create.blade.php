@@ -30,10 +30,8 @@
                             <label class="input-group-text" for="inputGroupSelect01">Options</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="options">
-                          <option selected>Choose...</option>
                           <option value="up">Up</option>
                           <option value="down">Down</option>
-                          <option value="linear">Linear</option>
                         </select>
                     </div>
                 </div>

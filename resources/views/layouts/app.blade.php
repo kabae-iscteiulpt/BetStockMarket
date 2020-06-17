@@ -24,7 +24,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
             
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <!-- faço a validação do useradmin neste ponto e caso o user seja admin não mostro o botão em baixo -->
+                <a class="navbar-brand" href="{{ url('/bets') }}">
                     {{ config('app.name', 'Bet On Stock Market') }}
                 </a>
 
@@ -37,7 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/bets') }}">{{ __('Bet') }}</a>
+                            <a class="nav-link" href="{{ url('/profile') }}">{{ __('Profile') }}</a>
                         </li>
                     </ul>
 

@@ -44,9 +44,10 @@ class BetController extends Controller
      */
     public function store(Request $request)
     {
+        $user_points =  auth()->user()->points;
         $data = request()->validate([
-            'amount' => 'required',
-            'symbol' => 'required', // minimo = 1 e máximo = max_user_points
+            'amount' => 'required|integer|min:1|max:'.$user_points,// minimo = 1 e máximo = max_user_points
+            'symbol' => 'required', 
             'options' => 'required',
         ]);
         // (int)$request->get('amount');
