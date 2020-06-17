@@ -23,12 +23,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-            
-            <!-- faço a validação do useradmin neste ponto e caso o user seja admin não mostro o botão em baixo -->
                 <a class="navbar-brand" href="{{ url('/bets') }}">
                     {{ config('app.name', 'Bet On Stock Market') }}
                 </a>
-
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

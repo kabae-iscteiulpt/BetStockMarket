@@ -61,8 +61,6 @@ class BackOfficeController extends Controller
             return redirect()->route('backoffice');
 
         }
-    
-
-    }  
+    }
 
 }
