@@ -24,7 +24,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
             
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <!-- faço a validação do useradmin neste ponto e caso o user seja admin não mostro o botão em baixo -->
+                <a class="navbar-brand" href="{{ url('/bets') }}">
                     {{ config('app.name', 'Bet On Stock Market') }}
                 </a>
 
@@ -36,7 +37,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/profile') }}">{{ __('Profile') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -54,7 +57,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} ({{Auth::user()->points}}) <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
+use App\Charts\UserChart2;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,14 +24,25 @@ class UserController extends Controller{
      */
     public function index()
     {
-        $users = DB::select('select * from users');
-    
-        foreach($users as $data){
-            $pointsOfUser = $data -> points;
+        $user_points = DB::table('users_history')->where('user_id', auth()->user()->id)->select('points')->get()->toArray();
+        $points = json_decode(json_encode($user_points), true);
+        $points2 = [];
+        for( $i= 0; $i < count($points); $i++){
+            $points2[$i] = (int)$points[$i]['points'];
         }
-        return view('profile')->with('pointsOfUser',$pointsOfUser);
-    }
 
+        $created_at = DB::table('users_history')->where('user_id', auth()->user()->id)->select('created_at')->get()->toArray();
+        $dates = json_decode(json_encode($created_at), true);
+        $dates2 = [];
+        for( $i= 0; $i < count($dates); $i++){
+            $dates2[$i] = $dates[$i]['created_at'];
+        }
+
+        $sampleChart = new UserChart2;
+        $sampleChart->labels($dates2);
+        $sampleChart->dataset('Points', 'line', $points2);
+        return view('profile', compact('sampleChart'));
+    }
 }
 
 ?>
