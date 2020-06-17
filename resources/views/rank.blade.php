@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Rank of all Users</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,25 +13,24 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        Make a new bet here:
-                        <a class="btn btn-primary" href="{{ route('bets.create') }}">Bet</a>
+                        Ranks
                     <hr>
                     <table class="table table-striped table-hover">
                         <thead class="thead-dark">
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Symbol</th>
-                                <th scope="col">Yesterday</th>
-                                <th scope="col">Today</th>
+                                <th scope="col">#Bets</th>
+                                <th scope="col">Points</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($stocks as $stock)
-                                <tr class='clickable-row'>
-                                    <td>{{$stock->name}}</td>
-                                    <td class="symbol" data-symbol-id="s-id">{{$stock->symbol}}</td>
-                                    <td>{{$stock->stockvaluebefore}}</td>
-                                    <td>{{$stock->currentstockvalue}}</td>
+                            @foreach($users as $key => $user)
+                                <tr>
+                                    <td>{{$key+1}}</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>0</td>
+                                    <td>{{$user->points}}</td>
                                 </tr>
                             @endforeach 
                         </tbody>

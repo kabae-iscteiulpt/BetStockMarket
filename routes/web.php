@@ -23,6 +23,8 @@ Route::get('/backoffice','BackOfficeController@index')->name('backoffice');
 
 Route::get('/profile','UserController@index')->name('profile');
 
+Route::get('/rank','RankController@index')->name('rank');
+
 Route::post('/insertStock','BackOfficeController@insertStock');
 
 Route::get('/deleteStock/{id}',function($id){
