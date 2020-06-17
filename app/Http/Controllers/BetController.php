@@ -65,6 +65,10 @@ class BetController extends Controller
         $user->points = $newPoints;
         $user->save();
 
+        DB::table('users_history')->insert(
+            ['points' => $user_points, 'user_id' => $user->id, "created_at" =>  \Carbon\Carbon::now() ],
+        );
+
         return redirect()->route('bets.index')
                         ->with('success','Bet created successfully.');
     }

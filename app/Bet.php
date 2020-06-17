@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bet extends Model
 {
     protected $fillable = [
-        'symbol', 'amount'. 'user_id'
+        'symbol', 'amount', 'user_id'
       ];
     
     public function user() {
