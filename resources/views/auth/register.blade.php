@@ -63,10 +63,6 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <div>
-                                    <input name="isUserAdmin" type="checkbox" value="userAdmin">userAdmin
-                                </div>
-                                <br>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>  

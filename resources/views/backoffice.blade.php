@@ -10,9 +10,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-            <h3>Stock_ID</h3>
+            <h3>Name</h3>
               <div class="form-group">
-                <input type="number" class="form-control" name="stockID">
+                <input type="text" class="form-control" name="nameCompany">
               </div>
         </div>
         <div class="col-sm-4">
@@ -40,7 +40,7 @@
 	<thead>
 		<tr>
     <th>id</th>
-		<th>stock_id</th>
+		<th>name</th>
 		<th>symbol</th>
 		<th>stockvaluebefore</th>
 		<th>currentstockvalue</th>
@@ -53,7 +53,7 @@
   @foreach($listOfStock as $key => $data)
 		<tr>   
     <th>{{$data->id}}</th> 
-		<th>{{$data->stock_id}}</th>
+		<th>{{$data->name}}</th>
 		<th>{{$data->symbol}}</th>
 		<th>{{$data->stockvaluebefore}}</th>
 		<th>{{$data->currentstockvalue}}</th>

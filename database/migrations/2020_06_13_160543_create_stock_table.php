@@ -15,7 +15,7 @@ class CreateStockTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('stock_id');
+            $table->String('name');
             $table->String('symbol');
             $table->double('stockvaluebefore');
             $table->double('currentstockvalue');
