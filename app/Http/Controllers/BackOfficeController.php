@@ -43,14 +43,15 @@ class BackOfficeController extends Controller
 
         if (isset($_POST['insertButtonBackoffice'])) {
 
-            $stock_id =$request->input('stockID');
+            $nameCompany =$request->input('nameCompany');
             $stock_value =$request->input('stockValue');
             $companySymbol =$request->input('companySymbol');
            
-            if($stock_id!=null&&$stock_value!=null&&$companySymbol!=null){
+            if($nameCompany!=null&&$stock_value!=null&&$companySymbol!=null){
             $date = new DateTime();
 
-            $data = array('stock_id'=>$stock_id,'symbol'=>$companySymbol,'stockvaluebefore'=>$stock_value,'currentstockvalue'=>$stock_value,'created_at'=>$date,'updated_at'=>$date);
+            $data = array('name'=>$nameCompany,'symbol'=>$companySymbol,'stockvaluebefore'=>$stock_value,
+            'currentstockvalue'=>$stock_value,'created_at'=>$date,'updated_at'=>$date);
             DB::table('stocks')->insert($data);
         }
             return redirect()->route('backoffice');
