@@ -23,6 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+             @guest
+            @else
                 <a class="navbar-brand" href="{{ url('/bets') }}">
                     {{ config('app.name', 'Bet On Stock Market') }}
                 </a>
@@ -34,6 +36,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+
+                   
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/profile') }}">{{ __('Profile') }}</a>
                         </li>
@@ -41,7 +45,7 @@
                             <a class="nav-link" href="{{ url('/rank') }}">{{ __('Ranks') }}</a>
                         </li>
                     </ul>
-
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
