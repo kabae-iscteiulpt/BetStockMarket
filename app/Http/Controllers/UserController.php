@@ -24,6 +24,7 @@ class UserController extends Controller{
      */
     public function index()
     {
+        
         $user_points = DB::table('users_history')->where('user_id', auth()->user()->id)->select('points')->get()->toArray();
         $points = json_decode(json_encode($user_points), true);
         $points2 = [];

@@ -24,12 +24,20 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/home';
 
 
-        /**
+    /**
      * The path to the "profile" route for your application.
      *
      * @var string
      */
     public const PROFILE = '/profile';
+
+
+    /**
+     * The path to the "backoffice" route for your application.
+     *
+     * @var string
+     */
+    public const BACKOFFICE = '/backoffice';
 
     /**
      * Define your route model bindings, pattern filters, etc.

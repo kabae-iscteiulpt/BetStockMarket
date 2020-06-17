@@ -26,6 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
+
+     
     protected $redirectTo = RouteServiceProvider::PROFILE;
 
     /**
@@ -36,5 +38,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+
+    public function redirectTo(){
+        $idOfUser = auth()->user()->id;
+        $nameOfUser = auth()->user()->name;
+        if($idOfUser=="1"&&$nameOfUser=="admin"){
+            return route('backoffice');          
+        }else{          
+            return route('profile');
+        }
     }
 }
