@@ -13,6 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    Pontos do user: 
+                    <br>
+                    {{$pointsOfUser}}
                 </div>
             </div>
         </div>

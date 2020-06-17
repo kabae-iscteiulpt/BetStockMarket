@@ -12,10 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Main');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/backoffice','BackOfficeController@index')->name('backoffice');
+
+Route::get('/profile','UserController@index')->name('profile');
+
+Route::post('/insertStock','BackOfficeController@insertStock');
+
+Route::get('/deleteStock/{id}',function($id){
+    DB::table('stocks')->where('id', '=', $id)->delete();
+    return redirect()->route('backoffice');
+});
 
