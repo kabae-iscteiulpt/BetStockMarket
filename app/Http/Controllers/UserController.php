@@ -38,6 +38,10 @@ class UserController extends Controller{
             $dates2[$i] = $dates[$i]['created_at'];
         }
 
+        //Adicionar items a ultima posição do array
+        array_push($points2, auth()->user()->points);
+        array_push($dates2, 'Now');
+
         $sampleChart = new UserChart2;
         $sampleChart->labels($dates2);
         $sampleChart->dataset('Points', 'line', $points2);

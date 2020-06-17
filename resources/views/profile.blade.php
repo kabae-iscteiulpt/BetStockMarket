@@ -13,6 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div>
+                        <h4>username: {{Auth::user()->name}}</h4>
+                    </div>
+                    <div>
+                        <h4>Email: {{Auth::user()->email}}</h4>
+                    </div>
                     <div style="">
                         {!! $sampleChart->container() !!}
                     </div>
